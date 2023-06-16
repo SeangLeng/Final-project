@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react'
 import logoProject from "../images/logo-project.jpg"
 import Image from 'next/image'
 import "./loginStyle.css"
+import secureLocalStorage from "react-secure-storage";
+import { fetchUser } from '../dashboard/page'
 
 export const getUserToCheck = async () => {
     const request = await fetch("https://api.escuelajs.co/api/v1/users?limit=5")
     const response = await request.json();
     return response;
-
 }
 
 export default function LogInPage() {
@@ -16,26 +17,23 @@ export default function LogInPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [checkUser, getUser] = useState([]);
-
+    
     useEffect(() => {
         getUserToCheck().then((user) => getUser(user))
     }, [])
 
-    let setUser;
     const handleSubmit = (event) => {
         event.preventDefault();
         // using api to check the user 
         checkUser.map((user) => {
-            if (user.name === username && user.password === password) {
-                setUser = localStorage.setItem('user', JSON.stringify(user))
+            if (user.name === username && user.password === password) {            
+                secureLocalStorage.setItem("user", JSON.stringify(user))
                 window.history.back();
                 document.getElementById('tryAgain').innerHTML = " "
             }
         })
     }
-    useEffect(() => {
-        setUser;
-    }, [])
+
     return (
         <div className='logIn p-20'>
             <form onSubmit={handleSubmit}>

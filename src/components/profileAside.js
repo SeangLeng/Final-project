@@ -1,12 +1,10 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import secureLocalStorage from 'react-secure-storage'
 
 export default function ProfileAside() {
-    const[profile, setProfile] = useState([])
-    useEffect(() => {
-        setProfile(JSON.parse(localStorage.getItem("user")))
-    }, [])
-    console.log(profile)
+    const getuser = secureLocalStorage.getItem("user")
+    const profile = JSON.parse(getuser)
 
     return (
         <div>

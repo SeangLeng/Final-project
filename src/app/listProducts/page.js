@@ -1,13 +1,11 @@
 'use client'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import secureLocalStorage from 'react-secure-storage';
 
-export default function page() {
-    const[profile, setProfile] = useState([])
-    
-    useEffect(() => {
-        setProfile(JSON.parse(localStorage.getItem('user')))
-    }, [])
+export default function CVList() {
+    const getuser = secureLocalStorage.getItem("user")
+    const profile = JSON.parse(getuser)
 
     return (
         <div className='w-[340px]'>

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import logo2 from '@/app/images/logo-project.jpg'
 import Image from 'next/image';
+import secureLocalStorage from 'react-secure-storage';
 
 export default function NavbarDashboard() {
     const resetUser = () => {
@@ -12,13 +13,9 @@ export default function NavbarDashboard() {
             console.log(err)
         }
     }
-    const[user, setProfile] = useState([])
+    const getuser = secureLocalStorage.getItem("user")
+    const user = JSON.parse(getuser)
 
-    useEffect(() => {
-        setProfile(JSON.parse(localStorage.getItem('user')))
-    }, [])
-    console.log(user)
-    console.log(user.avatar)
     return (
         <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <div class="px-3 py-3 lg:px-5 lg:pl-3">
