@@ -27,7 +27,6 @@ export default function LogInPage() {
         // using api to check the user 
         checkUser.map((user) => {
             if (user.name === username && user.password === password) {            
-                secureLocalStorage.setItem("user", JSON.stringify(user))
                 window.history.back();
                 document.getElementById('tryAgain').innerHTML = " "
             }

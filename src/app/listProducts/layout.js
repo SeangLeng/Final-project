@@ -1,8 +1,7 @@
-'use client'
+
 import Navbar from '@/components/navbar'
 import '/src/app/globals.css'
 import Script from 'next/script'
-import React, { useEffect, useState } from 'react'
 import ProfileAside from '@/components/profileAside'
 
 export default function layout({ children }) {

@@ -31,7 +31,7 @@ export default function ManagementPage() {
             name: 'Name',
             selector: row =>
                 <div className='p-2 flex justify-center items-center gap-5'>
-                    <img src={row.avatar ? `${row.avatar}` : 'https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg'} width={50} height={50} className='rounded-full' />
+                    <img src={(row.avatar) ? `${row.avatar}` : 'https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg'} width={50} height={50} className='rounded-full' />
                     <span className='grid gap-1'>
                         <p>{row.name}</p>
                         <p>{row.email}</p>
