@@ -82,7 +82,8 @@ export default function Navbar() {
     if (typeof window !== "undefined") {
         url = window.location;
     }
-    if (check.href !== 'http://localhost:3000/log-in')
+    console.log(url)
+    if (check.pathname !== "/log-in")
         return (
             <nav className="bg-white dark:bg-gray-900 px-5 fixed w-full z-30 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
                 <div className=" flex flex-wrap items-center justify-between pr-4">
