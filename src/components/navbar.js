@@ -1,12 +1,15 @@
-'use client'
+"use client"
 import React, { useEffect, useState } from 'react'
-
 import logo2 from '../app/images/logo-project.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Navbar() {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const[user, SetUser] = useState([])
+
+    useEffect(() => {
+        SetUser(JSON.parse(localStorage.getItem('user')))
+    }, [])
 
     const resetUser = () => {
         localStorage.clear();

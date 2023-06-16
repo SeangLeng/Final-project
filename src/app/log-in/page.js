@@ -21,21 +21,23 @@ export default function LogInPage() {
         getUserToCheck().then((user) => getUser(user))
     }, [])
 
+    let setUser;
     const handleSubmit = (event) => {
         event.preventDefault();
         // using api to check the user 
         checkUser.map((user) => {
             if (user.name === username && user.password === password) {
-                localStorage.setItem('user', JSON.stringify(user))
+                setUser = localStorage.setItem('user', JSON.stringify(user))
                 window.history.back();
                 document.getElementById('tryAgain').innerHTML = " "
             }
         })
     }
-
+    useEffect(() => {
+        setUser;
+    }, [])
     return (
         <div className='logIn p-20'>
-
             <form onSubmit={handleSubmit}>
                 <Image src={logoProject} alt="logo-image" />
                 <p className='capitalize text-4xl font-semibold text-center mt-20'>log me in</p>

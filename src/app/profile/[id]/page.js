@@ -1,6 +1,5 @@
 'use client'
-import Image from 'next/image';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './studentDetail.css'
 
 async function fetchUser(id) {
@@ -8,11 +7,13 @@ async function fetchUser(id) {
     return request.json();
 }
 
-export default async function ProfileDetail({ params }) {
+export default function ProfileDetail({ params }) {
     const { id } = params;
-    const profile = await fetchUser(id);
-    console.log("profile in profile/[id]", profile)
+    const [profile, setProfile] = useState([]);
 
+    useEffect(()=>{
+        fetchUser(id).then(res => setProfile(res));
+    }, [])
     return (
         <section className='mt-32 flex justify-between item-center px-[10%]'>
             <div className='profile-detail grid p-5 w-1/4'>

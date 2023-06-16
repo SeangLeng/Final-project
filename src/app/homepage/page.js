@@ -22,7 +22,6 @@ const getUserSearching = async () => {
   return response;
 }
 
-
 export default function Homepage() {
   // dropdown questions !!!
   const [open, setOpen] = useState(false);

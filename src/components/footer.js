@@ -6,7 +6,7 @@ import ImageBg from '../app/images/background_footer.png'
 export default function Footer() {
     const url = window.location.pathname; 
     console.log(url) 
-    if (window.location.pathname === "/" || window.location.pathname === "/") {
+    if (url=== "/") {
         return (
             <div className="relative w-full">
                 <Image src={ImageBg} alt="background-image" className="absolute -z-10 bottom-0 right-0 w-full" width={"100%"} height={"100%"} />

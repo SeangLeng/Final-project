@@ -1,5 +1,5 @@
-'use client'
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import logo2 from '@/app/images/logo-project.jpg'
 import Image from 'next/image';
 
@@ -12,7 +12,12 @@ export default function NavbarDashboard() {
             console.log(err)
         }
     }
-    const user = JSON.parse(localStorage.getItem('user'));
+    const[user, setProfile] = useState([])
+
+    useEffect(() => {
+        setProfile(JSON.parse(localStorage.getItem('user')))
+    }, [])
+    console.log(user)
     console.log(user.avatar)
     return (
         <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
