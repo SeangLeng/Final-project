@@ -3,10 +3,18 @@ import logo2 from "/src/app/images/logo-project.jpg"
 import Image from "next/image"
 import Link from "next/link"
 import ImageBg from '../app/images/background_footer.png'
+import { useEffect, useState } from "react"
 export default function Footer() {
-    const url = window.location.pathname; 
-    console.log(url) 
-    if (url=== "/") {
+    const [check, setUrl] = useState([]);
+    useEffect(()=> {
+        setUrl(url);
+    })
+    let url;
+    if (typeof window !== "undefined") {
+        url = window.location;
+    }
+
+    if (check.pathname === "/") {
         return (
             <div className="relative w-full">
                 <Image src={ImageBg} alt="background-image" className="absolute -z-10 bottom-0 right-0 w-full" width={"100%"} height={"100%"} />
