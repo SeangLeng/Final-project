@@ -16,22 +16,22 @@ export default function ManagementPage() {
         fetchingUser().then(res => getUser(res))
         fetchingUser().then(res => setSearch(res))
     }, [])
-    
+
     const removeUser = (id) => {
-        const newState = [...data]; 
-        const index = newState.findIndex(res => res.id === id); 
+        const newState = [...data];
+        const index = newState.findIndex(res => res.id === id);
         newState.splice(index, 1);
-        console.log("Array deleted : " , newState.splice(index, 1))
+        console.log("Array deleted : ", newState.splice(index, 1))
         getUser(newState)
         setSearch(newState)
     }
-    
+
     const columns = [
         {
             name: 'Name',
             selector: row =>
                 <div className='p-2 flex justify-center items-center gap-5'>
-                    <img src={(row.avatar) ? `${row.avatar}` : 'https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg'} width={50} height={50} className='rounded-full' />
+                    <img src={row.avatar} width={50} height={50} className='rounded-full' />
                     <span className='grid gap-1'>
                         <p>{row.name}</p>
                         <p>{row.email}</p>
@@ -55,7 +55,7 @@ export default function ManagementPage() {
                         <svg width="25" height="25" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M26.8997 14C26.8997 21.1956 21.168 27 14.1328 27C7.09766 27 1.36597 21.1956 1.36597 14C1.36597 6.8044 7.09766 1 14.1328 1C21.168 1 26.8997 6.8044 26.8997 14Z" stroke="#FF0000" stroke-width="2" />
                             <rect x="6.26611" y="13" width="14.7502" height="2" fill="#FF0000" />
-                        </svg>  
+                        </svg>
                     </button>
                 </div>
             )
