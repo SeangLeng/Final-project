@@ -1,16 +1,8 @@
-"use client"
 import Script from 'next/script'
 import thumbnail from "@/app/images/teamShowcase.png"
 import NavbarDashboard from '@/components/navbarDash'
 import SideBar from '@/components/sideBar'
 import DashboardFooter from '@/components/dashboardFooter'
-
-export const metadata = {
-    title: 'PortISTAD',
-    thumbnail: { thumbnail },
-    description: 'This is the kind of project, which you can generate your cv and portfoio. Just try us to see what you can do.',
-}
-
 
 export default function RootLayout({ children }) {
     return (

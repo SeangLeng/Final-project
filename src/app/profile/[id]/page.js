@@ -1,4 +1,3 @@
-"use client"
 import Image from 'next/image';
 import React from 'react'
 import './studentDetail.css'
@@ -8,27 +7,6 @@ async function fetchUser(id) {
     return request.json();
 }
 
-export async function generateMetadata(id) {
-    const product = await fetchUser(id)
-    return {
-        title: product.name,
-        description: product.email,
-        thumbnail: product.images,
-        metadataBase: new URL('https://istad.co'),
-        alternates: {
-            canonical: '/',
-            languages: {
-                'en-US': '/en-US',
-                'de-DE': '/de-DE'
-            }
-        },
-        openGraph: {
-            images: product.images,
-            title: product.name,
-            description: product.email
-        }
-    }
-}
 export default async function ProfileDetail({ params }) {
     const { id } = params;
     const profile = await fetchUser(id);
