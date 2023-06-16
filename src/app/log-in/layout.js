@@ -1,8 +1,7 @@
-import Navbar from '@/components/navbar'
+'use client'
 import '/src/app/globals.css'
 import React from 'react'
 import Script from 'next/script'
-import Footer from '@/components/footer'
 
 export default function layout({ children }) {
     return (
