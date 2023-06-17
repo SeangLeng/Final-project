@@ -20,12 +20,12 @@ export default function LogInPage() {
         getUserToCheck().then(data => setUser(data))
     })
     const validateSchema = Yup.object().shape({
-        email: Yup.string().required("Username must not be blank"),
+        studentID: Yup.string().required("You have to had ISTAD studentId first"),
     })
 
     return (
         <Formik
-            initialValues={{ email: ""}}
+            initialValues={{studentID: ""}}
             validationSchema={validateSchema}
             onSubmit={(values) => {
                 // Alert the input values of the form that we filled
@@ -45,24 +45,27 @@ export default function LogInPage() {
                         <form noValidate onSubmit={handleSubmit} className='flex flex-col justify-between items-center h-[60vh]'>
                             <div className='flex flex-col justify-center items-center'>
                                 <Image src={logoProject} alt="logo-image" />
-                                <p className='capitalize text-2xl font-semibold text-center mt-20'>Foget your password</p>
+                                <p className='capitalize text-2xl font-semibold text-center mt-20'>Log me In</p>
                             </div>
                             <div className='input mt-10'>
                                 <div className="mb-6">
-                                    <input type="email"
-                                        name="username"
+                                    <input type="text"
+                                        name="studentID"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.email}
-                                        placeholder="Your email"
-                                        id="email"
+                                        value={values.studentID}
+                                        placeholder="StudentId"
+                                        id="id"
                                         className="p-4 w-full rounded-[20px] bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                     <p className="error text-red-600">
-                                        {errors.email && touched.email && errors.email}
+                                        {errors.studentID && touched.studentID && errors.studentID}
                                     </p>
                                 </div>
                             </div>
-                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-14 py-3 mt-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            <a href='/login/signIn' className='text-center mb-5 text-xl'>
+                                Has an account yet ? <span className='underline font-semibold'>sign - in</span>
+                            </a>
+                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-14 py-3 mt-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log in</button>
                         </form>
                     </div>
                 )

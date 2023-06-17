@@ -47,7 +47,7 @@ export default function LogInPage() {
                             <Image src={logoProject} alt="logo-image" />
                             <p className='capitalize text-4xl font-semibold text-center mt-20'>log me in</p>
                             <div className='input mt-10'>
-                                <div class="mb-6">
+                                <div className="mb-6">
                                     <input type="text"
                                         name="username"
                                         onChange={handleChange}
@@ -60,7 +60,7 @@ export default function LogInPage() {
                                         {errors.username && touched.username && errors.username}
                                     </p>
                                 </div>
-                                <div class="mb-6">
+                                <div className="mb-6">
                                     <input
                                         name="password"
                                         onChange={handleChange}
@@ -79,14 +79,14 @@ export default function LogInPage() {
 
                             </div>
                             <div className='links-part grid w-full'>
-                                <a href='#' className='text-center mb-5 mt-10 text-xl'>
+                                <a href='/login/istadLogin' className='text-center mb-5 mt-10 text-xl'>
                                     I am <span className='underline font-semibold'>ISTAD Student</span>
                                 </a>
                                 <a href='/login/signIn' className='text-center mb-5 text-xl'>
                                     Has an account yet ? <span className='underline font-semibold'>sign - in</span>
                                 </a>
                             </div>
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-14 py-3 mt-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-14 py-3 mt-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                         </form>
                     </div>
                 )

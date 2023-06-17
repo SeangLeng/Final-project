@@ -28,7 +28,7 @@ export default function SignIn() {
 
     return (
         <Formik
-            initialValues={{ username: "", password: "" }}
+            initialValues={{ email: "", username: "", password: "", confirmPassword: "" }}
             validationSchema={validateSchema}
             onSubmit={(values) => {
                 // Alert the input values of the form that we filled
@@ -49,20 +49,20 @@ export default function SignIn() {
                             <p className='capitalize text-4xl font-bold text-white text-start'>Sign - up</p>
                             <p className='capitalize text-sm mt-5 text-white text-start'>Please fill in this form to create an account!</p>
                             <div className='input mt-14 grid gap-3'>
-                                <div class="mb-6">
+                                <div className="mb-6">
                                     <input type="email"
                                         name="email"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.email}
-                                        placeholder="email"
+                                        placeholder="Email"
                                         id="email"
                                         className="p-4 w-full rounded-[20px] bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                     <p className="error text-red-600">
                                         {errors.email && touched.email && errors.email}
                                     </p>
                                 </div>
-                                <div class="mb-6">
+                                <div className="mb-6">
                                     <input type="text"
                                         name="username"
                                         onChange={handleChange}
@@ -75,7 +75,7 @@ export default function SignIn() {
                                         {errors.username && touched.username && errors.username}
                                     </p>
                                 </div>
-                                <div class="mb-6">
+                                <div className="mb-6">
                                     <input
                                         name="password"
                                         onChange={handleChange}
@@ -88,13 +88,13 @@ export default function SignIn() {
                                         {errors.password && touched.password && errors.password}
                                     </p>
                                 </div>
-                                <div class="mb-6">
+                                <div className="mb-6">
                                     <input
                                         name="confirmPassword"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.confirmPassword}
-                                        placeholder="Password"
+                                        placeholder="Confirm Password"
                                         id="confirmPassword"
                                         className="p-4 w-full rounded-[20px] bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-0 focus:border-0 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-0" />
                                     <p className="error text-red-600">
@@ -102,7 +102,7 @@ export default function SignIn() {
                                     </p>
                                 </div>
                             </div>
-                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg m-auto text-lg w-full sm:w-auto px-14 py-3 mt-10F text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign me up</button>
+                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg m-auto text-lg w-full sm:w-auto px-14 py-3 mt-10 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign me up</button>
                         </form>
                     </div>
                 )

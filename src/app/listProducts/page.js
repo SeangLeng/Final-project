@@ -10,6 +10,8 @@ export async function fetchGatgory() {
 }
 
 export default function CVList() {
+    const item = secureLocalStorage.getItem("user" || "")
+    const user = JSON.parse(item);
     const [gateGory, setGate] = useState([])
     useEffect(() => {
         fetchGatgory().then(res => setGate(res));
@@ -19,10 +21,22 @@ export default function CVList() {
         <>
             {
                 gateGory.map(e => (
-                    <div className='w-[340px]'>
-                        <img src={e ? `${e.images[0]}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
-                        <div className='text-center mt-1'>{e ? `${e.title}` : `name`}</div>
-                    </div>
+                    user ? (
+                        <a href='#'>
+                            <div className='w-[340px]'>
+                                <img src={e ? `${e.images[0]}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
+                                <div className='text-center mt-1'>{e ? `${e.title}` : `name`}</div>
+                            </div>
+                        </a>
+                    ) : (
+                        <a href='/login'>
+                            <div className='w-[340px]'>
+                                <img src={e ? `${e.images[0]}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
+                                <div className='text-center mt-1'>{e ? `${e.title}` : `name`}</div>
+                            </div>
+                        </a>
+
+                    )
                 ))
             }
         </>

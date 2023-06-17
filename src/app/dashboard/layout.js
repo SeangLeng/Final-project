@@ -10,8 +10,8 @@ export default function RootLayout({ children }) {
             <body>
                 <NavbarDashboard />
                 <SideBar />
-                <div class="p-4 sm:ml-64">
-                    <div class="p-4 dark:border-gray-700 mt-24">
+                <div className="p-4 sm:ml-64">
+                    <div className="p-4 dark:border-gray-700 mt-24">
                         {children}
                     </div>
                 </div>
