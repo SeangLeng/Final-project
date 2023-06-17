@@ -21,7 +21,7 @@ export default function CVList() {
                 gateGory.map(e => (
                     <div className='w-[340px]'>
                         <img src={e ? `${e.images[0]}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
-                        <p className='text-center mt-5'>{e ? `${e.title}` : `name`}</p>
+                        <div className='text-center mt-1'>{e ? `${e.title}` : `name`}</div>
                     </div>
                 ))
             }

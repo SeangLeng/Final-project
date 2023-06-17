@@ -90,5 +90,19 @@ body {
 
 .arrow {
   transform: rotate(180deg);
-  transition: 0.2s ease;
+  transition: 0.4s ease;
+}
+
+nav {
+  transition: .4s;
+  animation: topDown 1s ease-in;
+}
+
+@keyframes topDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
 }

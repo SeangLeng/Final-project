@@ -17,7 +17,7 @@ export default function Portfoio() {
 
     const handleClick = () =>  {
         if (!JSON.parse(secureLocalStorage.getItem("user"))){
-            window.location = "/log-in"
+            window.location = "/login"
         }
     }
 

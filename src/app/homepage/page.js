@@ -118,8 +118,8 @@ export default function Homepage() {
         <p className='text-3xl text-blue-800 font-medium text-center'>Why you choose <span className='font-semibold text-blue-800'>PortISTAD</span></p>
         <p className='text-lg text-gray-500 text-center mt-2'>These are the reasons</p>
 
-        <div className='lg:flex justify-between mt-14'>
-          <div className='card flex lg:w-[32%] sm:w-full sm:mt-5'>
+        <div className='lg:flex justify-between mt-14 gap-5'>
+          <div className='card flex lg:w-[32%] sm:w-full sm:mt-5 mt-5'>
             <div className='flex-col justify-between'>
               <p className='text-2xl'>Generating Cover letter</p>
               <p className='mt-5'>It's also important to provide specific examples of how you have contributed to your previous roles.</p>
@@ -134,7 +134,7 @@ export default function Homepage() {
               <Image src={generateCV} alt='generating CV' className='w-96' />
             </div>
           </div>
-          <div className='card flex lg:w-[32%] md:w-full sm:w-full sm:mt-5'>
+          <div className='card flex lg:w-[32%] md:w-full sm:w-full sm:mt-5 mt-5'>
             <div className='flex-col justify-between'>
               <p className='text-2xl'>Generating Portfolio</p>
               <p className='mt-5'>Begin by selecting a clear and concise format that is easy to navigate and visually appealing.</p>
@@ -149,7 +149,7 @@ export default function Homepage() {
               <Image src={generatePortfoio} alt='generating CV' className='w-96' />
             </div>
           </div>
-          <div className='card flex lg:w-[32%] md:w-full sm:w-full sm:mt-5'>
+          <div className='card flex lg:w-[32%] md:w-full sm:w-full sm:mt-5 mt-5'>
             <div className='flex-col justify-between'>
               <p className='text-2xl'>View ISTAD student</p>
               <p className='mt-5'>You all can find the ISTAD student account with their public account. </p>

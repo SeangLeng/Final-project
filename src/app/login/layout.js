@@ -1,3 +1,4 @@
+'use client'
 import '/src/app/globals.css'
 import React from 'react'
 

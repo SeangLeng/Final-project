@@ -6,6 +6,8 @@ import Head from 'next/head'
 import Script from 'next/script'
 import Footer from '@/components/footer'
 import thumbnail from "@/app/images/teamShowcase.png"
+import { Suspense } from 'react'
+import Loading from './loading'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
@@ -13,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
+        <Suspense fallback={<Loading />}>
           {children}
+        </Suspense>
         <Footer />
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></Script>
       </body>

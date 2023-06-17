@@ -118,7 +118,7 @@ export default function page() {
     else{
 
         setTimeout(()=>{
-            window.location = '/log-in'
+            window.location = '/login'
         }, 1000)
 
         return "log in first"

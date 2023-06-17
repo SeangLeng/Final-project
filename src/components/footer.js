@@ -6,7 +6,7 @@ import ImageBg from '../app/images/background_footer.png'
 import { useEffect, useState } from "react"
 export default function Footer() {
     const [check, setUrl] = useState([]);
-    useEffect(()=> {
+    useEffect(() => {
         setUrl(url);
     })
     let url;
