@@ -45,7 +45,7 @@ export default function SignIn() {
                     handleSubmit,
                 }) => (
                     <div className='logIn p-20'>
-                        <form noValidate onSubmit={handleSubmit} className='items-start w-[33%]'>
+                        <form noValidate onSubmit={handleSubmit} className='items-start'>
                             <p className='capitalize text-4xl font-bold text-white text-start'>Sign - up</p>
                             <p className='capitalize text-sm mt-5 text-white text-start'>Please fill in this form to create an account!</p>
                             <div className='input mt-14 grid gap-3'>
