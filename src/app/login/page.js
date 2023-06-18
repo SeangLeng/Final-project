@@ -23,7 +23,7 @@ export default function LogInPage() {
         username: Yup.string().required("Username must not be blank"),
         password: Yup.string().required("password must not be blank")
     })
-
+    
     return (
         <Formik
             initialValues={{ username: "", password: "" }}

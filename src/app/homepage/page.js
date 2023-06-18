@@ -51,7 +51,7 @@ export default function Homepage() {
   const [userSearch, getSearch] = useState("");
   const [result, getResult] = useState([])
   const fetData = async (value) => {
-    await fetch("https://api.escuelajs.co/api/v1/users?limit=20")
+    await fetch("https://api.escuelajs.co/api/v1/users")
       .then(response => response.json()).then(json => {
         const res = json.filter(user => {
           return value && user && user.name && user.name.toLowerCase().includes(value.toLowerCase());

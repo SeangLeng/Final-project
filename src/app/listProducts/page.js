@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link';
+import "../listProducts/productsListStyle.css"
 import React, { useEffect, useState } from 'react'
 import secureLocalStorage from 'react-secure-storage';
 
@@ -23,14 +24,14 @@ export default function CVList() {
                 gateGory.map(e => (
                     user ? (
                         <a href='#'>
-                            <div className='w-[340px]'>
+                            <div className='products w-[340px]'>
                                 <img src={e ? `${e.images[0]}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
                                 <div className='text-center mt-1'>{e ? `${e.title}` : `name`}</div>
                             </div>
                         </a>
                     ) : (
                         <a href='/login'>
-                            <div className='w-[340px]'>
+                            <div className='products w-[340px]'>
                                 <img src={e ? `${e.images[0]}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
                                 <div className='text-center mt-1'>{e ? `${e.title}` : `name`}</div>
                             </div>

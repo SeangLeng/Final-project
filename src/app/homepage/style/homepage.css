@@ -80,11 +80,19 @@ button {
     border-radius: 3px;
     padding: 15px 10px;
     cursor: pointer;
+    transition: .4s;
+    animation: dropDown .7s ease; 
+}
+@keyframes dropDown {
+    from {
+        transform: translateY(-100%);
+    }to {
+        transform: translateY(0);
+    }
 }
 .searchResult ul li:hover {
     background-color: #e9f3ff;
 }
-
 @keyframes downTop {
     0% {
         transform: translateY(0%);
